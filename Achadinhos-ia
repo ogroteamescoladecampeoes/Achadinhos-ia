@@ -1,0 +1,13 @@
+achadinhos-ia
+│
+├── public
+│   └── sw.js
+│
+├── src
+│   ├── main.jsx
+│   └── styles.css
+│
+├── index.html
+├── manifest.webmanifest
+├── package.json
+└── README.md
