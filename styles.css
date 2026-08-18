@@ -1,1 +1,461 @@
-*{box-sizing:border-box}body{margin:0;background:#eef0f5;font-family:Inter,system-ui,-apple-system,sans-serif;color:#17191e}.phoneApp{width:100%;max-width:620px;margin:auto;min-height:100vh;background:#f7f8fb;padding-bottom:82px}.top{height:64px;background:#101218;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:5}.logo{display:flex;align-items:center;gap:5px;font-size:14px}.logo svg{color:#b7ff3c}.logo span{color:#b7ff3c;font-weight:900}.icon{border:0;background:transparent;color:inherit;padding:8px;cursor:pointer}.drawer{position:fixed;inset:0 auto 0 0;width:min(330px,88%);background:#101218;color:#fff;z-index:20;padding:18px;box-shadow:10px 0 40px #0005}.drawerHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.drawer button:not(.icon){display:flex;align-items:center;gap:13px;width:100%;border:0;background:transparent;color:#ddd;padding:15px 8px;font-size:15px;text-align:left}.drawer button svg:last-child{margin-left:auto}.drawer button:hover{background:#20232c;border-radius:10px}main{padding:18px 16px}.welcome{background:#101218;color:#fff;border-radius:20px;padding:22px;margin-bottom:15px}.welcome small{color:#b7ff3c;font-weight:800;letter-spacing:1px}.welcome h1{font-size:24px;margin:7px 0}.welcome p{color:#bfc3cc;margin:0;font-size:13px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:22px}.card{background:#fff;border:1px solid #e6e7eb;border-radius:14px;padding:14px}.card strong{font-size:22px;display:block}.card small{color:#777;font-size:11px}.sectionTitle,.pageTitle{display:flex;align-items:center;justify-content:space-between}.sectionTitle h2{font-size:18px}.sectionTitle button{border:0;background:none;color:#5961e8;font-weight:800}.pageTitle h1{font-size:25px}.search{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e1e2e6;border-radius:12px;padding:0 12px;margin:12px 0 16px}.search svg{color:#777}.search input{border:0;outline:0;padding:13px 0;width:100%;font-size:14px}.products{display:flex;flex-direction:column;gap:10px}.product{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #e5e6ea;border-radius:15px;padding:12px}.productIcon{width:48px;height:48px;border-radius:12px;background:#f1f2f5;display:grid;place-items:center;font-size:24px;flex:none}.productInfo{min-width:0;flex:1}.productInfo small{color:#858a95}.productInfo h3{font-size:14px;margin:3px 0}.productInfo del{font-size:11px;color:#999}.productInfo b{font-size:15px}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.tags span{font-size:9px;font-weight:800;background:#efffcf;padding:4px 6px;border-radius:20px}.storyBtn{border:0;background:#101218;color:#b7ff3c;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;cursor:pointer}.quick{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.quick button,.mainBtn,.publish{border:0;border-radius:12px;padding:13px;font-weight:800;cursor:pointer}.quick button:first-child{background:#101218;color:#fff}.quick button:last-child,.mainBtn{background:#b7ff3c;color:#111}.quick svg{vertical-align:middle;margin-right:5px}.stories{display:flex;flex-direction:column;gap:18px}.story{background:#fff;border-radius:16px;padding:12px;border:1px solid #e5e6ea}.storyCanvas{aspect-ratio:9/14;max-height:560px;border-radius:12px;background:linear-gradient(145deg,#151821,#363b48);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px}.storyCanvas small{color:#b7ff3c;letter-spacing:2px}.storyCanvas h2{font-size:25px}.storyCanvas del{opacity:.5}.storyCanvas strong{font-size:42px}.storyCanvas span{background:#b7ff3c;color:#111;padding:11px 22px;border-radius:30px;font-weight:900;margin-top:20px}.publish{width:100%;margin-top:10px;background:#101218;color:#fff}.bigMetric,.panel{background:#fff;border:1px solid #e5e6ea;border-radius:15px;padding:20px;margin-bottom:12px}.bigMetric small{color:#777}.bigMetric strong{font-size:38px;display:block;margin:6px 0}.bigMetric p,.panel p{color:#777;font-size:13px;line-height:1.5}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:620px;height:70px;background:#fff;border-top:1px solid #ddd;display:grid;grid-template-columns:repeat(5,1fr);z-index:10}.bottom button{border:0;background:none;color:#858a95;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.bottom button.selected{color:#17191e}.bottom button.selected svg{color:#5961e8}.bottom small{font-size:9px}.empty{text-align:center;color:#777;padding:60px 20px}.empty svg{width:40px;height:40px}@media(min-width:621px){body{padding:20px}.phoneApp{border-radius:22px;overflow:hidden;box-shadow:0 10px 50px #0002}.top{border-radius:22px 22px 0 0}}
+/* =========================================================
+   ACHADINHOS IA — MOBILE PWA
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #17171c;
+  --muted: #737783;
+  --primary: #7c3aed;
+  --primary-dark: #5b21b6;
+  --accent: #ec4899;
+  --border: #e8e8ef;
+  --shadow: 0 8px 25px rgba(20, 20, 40, 0.08);
+  --radius: 18px;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.phoneApp {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   TOPO
+   ========================================================= */
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 64px;
+  padding: 0 16px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.top > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+  background: #f1f1f7;
+  color: var(--text);
+
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.icon:active {
+  transform: scale(0.94);
+}
+
+.top h1,
+.top h2,
+.top strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.top small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* =========================================================
+   DRAWER / MENU
+   ========================================================= */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  width: min(86vw, 360px);
+
+  padding: 24px 18px;
+
+  background: var(--surface);
+  box-shadow: 15px 0 40px rgba(0, 0, 0, 0.15);
+
+  transform: translateX(-105%);
+  transition: transform 0.28s ease;
+
+  overflow-y: auto;
+}
+
+.drawer.open,
+.drawer.show,
+.drawer.active {
+  transform: translateX(0);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.drawer h2 {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.drawer button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 14px 12px;
+  margin-bottom: 6px;
+
+  background: transparent;
+  border-radius: 13px;
+  text-align: left;
+}
+
+.drawer button:hover {
+  background: #f5f3ff;
+}
+
+.drawer button.active {
+  background: #eee8ff;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+main {
+  width: 100%;
+  padding: 16px;
+}
+
+.welcome {
+  padding: 20px 2px 18px;
+}
+
+.welcome small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.welcome h1 {
+  margin-top: 4px;
+  font-size: clamp(26px, 7vw, 36px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.welcome p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TÍTULOS DE SEÇÃO
+   ========================================================= */
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 22px 0 12px;
+}
+
+.sectionTitle h2 {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+
+.sectionTitle small {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card {
+  min-width: 0;
+  overflow: hidden;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.card:hover {
+  box-shadow: 0 12px 30px rgba(20, 20, 40, 0.12);
+}
+
+.card img {
+  display: block;
+
+  width: 100%;
+  height: 150px;
+
+  object-fit: cover;
+  background: #eeeef4;
+}
+
+.cardContent,
+.card > div {
+  padding: 12px;
+}
+
+.card h3 {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 800;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card p {
+  margin-top: 6px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.card .price {
+  margin-top: 8px;
+
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 12px;
+
+  border-radius: 11px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.card button:active {
+  background: var(--primary-dark);
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: #f1eaff;
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tag {
+  display: inline-block;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: #f3f4f6;
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   BUSCA
+   ========================================================= */
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: 100%;
+  margin: 8px 0 16px;
+  padding: 12px 14px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow: 0 4px 15px rgba(20, 20, 40, 0.05);
+}
+
+.search input {
+  width: 100%;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 14px;
+}
+
+.search input::placeholder {
+  color: #a0a1aa;
+}
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.filters {
+  display: flex;
+  gap: 8px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filters button {
+  flex: 0 0 auto;
+
+  padding: 9px 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--surface);
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.filters button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* =========================================================
+   STORIES
+   ========================================================= */
